@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+using UnityEngine;
 internal sealed class BadBonus : InteractiveObjects
 {
-    override protected void Interaction()
+    protected override void Interaction()
     {
-        
+        //Позже вся информация будет вынесена в отдельный класс
+        Debug.LogWarning("This is a Bad Bonus");
     }
 }
