@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class GoodBonus : MonoBehaviour
+using PlayerDefinition;
+internal sealed class GoodBonus : InteractiveObjects , IFly
 {
-    // Start is called before the first frame update
-    void Start()
+    private float _lengthFly;
+    private Player _player;
+    private void Awake()
     {
-        
+        _lengthFly = Random.Range(0f, 1f);
+        _player = FindObjectOfType<PlayerBall>();
     }
-
-    // Update is called once per frame
-    void Update()
+    protected override void Interaction()
     {
-        
+        _player.Speed += 10f;
+    }
+    public void Fly()
+    {
+        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.PingPong(Time.time, _lengthFly), transform.localPosition.z);
     }
 }
