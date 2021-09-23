@@ -1,11 +1,11 @@
 using UnityEngine;
 namespace PlayerDefinition
 {
-    public class Player : MonoBehaviour
+    internal class Player : MonoBehaviour
     {
-        protected float Hp = 10f;
-        protected float Speed = 3f;
         protected Rigidbody rigidBody;
+        internal float Speed { get; set; } = 3f;
+
         private void Start()
         {
             rigidBody = GetComponent<Rigidbody>();
@@ -13,8 +13,7 @@ namespace PlayerDefinition
         protected void Move()
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
-
+            float moveVertical = Input.GetAxis("Vertical"); 
             Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
             rigidBody.AddForce(movement * Speed);
         }

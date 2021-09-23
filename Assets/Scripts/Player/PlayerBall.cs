@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace PlayerDefinition
 {
-    public class PlayerBall : Player
+    [RequireComponent(typeof(Rigidbody))]
+    internal class PlayerBall : Player
     {
-        private void Update() => Move();
+        private void Update()
+        {
+            Move();
+        }
     }
 }

@@ -12,10 +12,22 @@ namespace PlayerDefinition
         {
             offset = transform.position - player.transform.position;
         }
+        private void Log()
+        {
+            Debug.Log("Camera position:" + transform.position +
+                        "\n Player position: "+ player.transform.position);
+        }
+        private void Update()
+        {
+            //float rotation = Input.GetAxis("Mouse X");
+            //transform.RotateAround(player.gameObject.transform.position, Vector3.up, rotation);
+            //if (Input.GetKey(KeyCode.F)) Log();
+        }
 
         private void LateUpdate()
         {
             transform.position = player.transform.position + offset;
+            
         }
     }
 }
