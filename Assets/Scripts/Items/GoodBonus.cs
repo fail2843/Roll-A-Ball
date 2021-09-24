@@ -1,20 +1,18 @@
 using UnityEngine;
-using PlayerDefinition;
 internal sealed class GoodBonus : InteractiveObjects , IFly
 {
-    private float _lengthFly;
-    private Player _player;
+    internal event SetBonusEffect bonusEffect;
+ 
     private void Awake()
     {
-        _lengthFly = Random.Range(0f, 1f);
-        _player = FindObjectOfType<PlayerBall>();
+        groundOffset = 0.4f;
     }
     protected override void Interaction()
     {
-        _player.Speed += 10f;
+        bonusEffect?.Invoke(this);
     }
     public void Fly()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.PingPong(Time.time, _lengthFly), transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.PingPong(Time.time, groundOffset)+groundOffset, transform.localPosition.z);
     }
 }
