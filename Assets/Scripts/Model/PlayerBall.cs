@@ -1,6 +1,7 @@
 using UnityEngine;
 namespace RollABall
 {
+    //Wi-Fi Test
     [RequireComponent(typeof(Rigidbody))]
     internal sealed class PlayerBall : PlayerBase
     {

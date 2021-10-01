@@ -3,6 +3,7 @@ using Object = UnityEngine.Object;
 using System;
 namespace RollABall
 {
+    //Wi-Fi Test
     public sealed class ListExecuteObjects : IEnumerator, IEnumerable
     {
         private IExecute[] _interactiveObjects;
