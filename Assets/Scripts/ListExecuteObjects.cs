@@ -3,11 +3,10 @@ using Object = UnityEngine.Object;
 using System;
 namespace RollABall
 {
-    //Wi-Fi Test
     public sealed class ListExecuteObjects : IEnumerator, IEnumerable
     {
         private IExecute[] _interactiveObjects;
-        private int _index;
+        private int _index = -1;
         private InteractiveObjects _currentObject;
 
         public object Current => _interactiveObjects[_index];

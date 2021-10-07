@@ -1,7 +1,6 @@
 using UnityEngine;
 namespace RollABall
 {
-    //Wi-Fi Test
     [RequireComponent(typeof(Rigidbody))]
     internal sealed class PlayerBall : PlayerBase
     {
@@ -10,9 +9,10 @@ namespace RollABall
         {
             _rigidbody = GetComponent<Rigidbody>();
         }
-        internal override void Move(float x, float y, float z)
+        internal override void Move(Vector3 direction)
         {
-            _rigidbody.AddForce(new Vector3(x, y, z) * Speed);
+            _rigidbody.AddForce(direction * Speed);
+            
         }
     }
 }

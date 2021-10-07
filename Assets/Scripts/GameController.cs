@@ -5,26 +5,14 @@ namespace RollABall
     {
         private ListExecuteObjects _interactiveObjects;
         private CameraController _cameraController;
-        private InputController _inputController;
-        private PlayerBase _player;
-        private void BadBonusEffect(object value)
-        {
-            // _player.Speed *= 0.5f;
-        }
-        private void GoodBonusEffect(object value)
-        {
-            //_player.Speed *= 1.5f;
-        }
         private void Awake()
         {
             var references = new References();
 
             _interactiveObjects = new ListExecuteObjects();
-            _cameraController = new CameraController(references.PlayerBall.transform, references.MainCamera.transform);
-            _inputController = new InputController(references.PlayerBall);
+            _cameraController = new CameraController(references.PlayerBall, references.MainCamera.transform);     
 
-            _interactiveObjects.AddExecuteObject(_cameraController);
-            _interactiveObjects.AddExecuteObject(_inputController);
+            _interactiveObjects.AddExecuteObject(_cameraController);          
 
             foreach (var i in _interactiveObjects)
             {
@@ -52,6 +40,14 @@ namespace RollABall
                 if (i is GoodBonus goodBonus)
                     goodBonus.bonusEffect -= GoodBonusEffect;
             }
+        }
+        private void BadBonusEffect(object value)
+        {
+            //Add bonus
+        }
+        private void GoodBonusEffect(object value)
+        {
+            //Add bonus
         }
     }
 }

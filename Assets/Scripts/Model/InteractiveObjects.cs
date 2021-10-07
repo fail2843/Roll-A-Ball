@@ -10,7 +10,12 @@ namespace RollABall
         private void OnTriggerEnter(Collider other)
         {
             Interaction();
+            //Переделать.
+            //Нужно проверить уничтожение объекта или выкинуть его из списка исполняемых
             Destroy(gameObject);
+
+            Debug.LogError(gameObject.name);
+            
         }
     }
 }

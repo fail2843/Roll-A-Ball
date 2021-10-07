@@ -1,7 +1,6 @@
 using UnityEngine;
 namespace RollABall
 {
-    //Wi-Fi Test
     internal sealed class BadBonus : InteractiveObjects, IFly
     {
         public event SetObjectEffect bonusEffect;

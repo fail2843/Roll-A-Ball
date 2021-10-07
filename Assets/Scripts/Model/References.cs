@@ -1,7 +1,6 @@
 using UnityEngine;
 namespace RollABall
 {
-    //Wi-Fi Test
     public class References
     {
         private PlayerBall _playerBall;

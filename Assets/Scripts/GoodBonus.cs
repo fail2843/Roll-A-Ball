@@ -3,7 +3,6 @@ namespace RollABall
 {
     internal sealed class GoodBonus : InteractiveObjects, IFly
     {
-        //Wi-Fi Test
         internal event SetObjectEffect bonusEffect;
         public void Fly()
         {
