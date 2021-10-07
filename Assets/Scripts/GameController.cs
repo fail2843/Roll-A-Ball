@@ -11,7 +11,7 @@ namespace RollABall
             _references = new References();
 
             _interactiveObjects = new ListExecuteObjects();
-            _cameraController = new CameraController(references.PlayerBall, references.MainCamera.transform);     
+            _cameraController = new CameraController(_references.PlayerBall, _references.MainCamera.transform);     
 
             _interactiveObjects.AddExecuteObject(_cameraController);          
 
