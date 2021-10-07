@@ -3,11 +3,12 @@ namespace RollABall
 {
     public class GameController : MonoBehaviour
     {
+        private References _references;
         private ListExecuteObjects _interactiveObjects;
         private CameraController _cameraController;
         private void Awake()
         {
-            var references = new References();
+            _references = new References();
 
             _interactiveObjects = new ListExecuteObjects();
             _cameraController = new CameraController(references.PlayerBall, references.MainCamera.transform);     
@@ -43,11 +44,11 @@ namespace RollABall
         }
         private void BadBonusEffect(object value)
         {
-            //Add bonus
+            _references.PlayerBall.Speed *= 0.5f;
         }
         private void GoodBonusEffect(object value)
         {
-            //Add bonus
+            _references.PlayerBall.Speed *= 1.5f;
         }
     }
 }
